@@ -1,0 +1,804 @@
+/* Basic reset */
+* {
+    box-sizing: border-box;
+    font-family:'Gill Sans', sans-serif;
+    background-color: #fbfcd4;
+    color: #0a0a0a;
+}
+
+.welcome-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fbfcd4;
+    color: #151515;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+/* Typewriter effect for h1.title */
+.typewriter h1.title {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: 0.15em solid #fbc403; /* The typewriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Centers the text */
+    letter-spacing: 0.15em; /* Adjust as needed */
+    font-size: 2.5rem;
+    color: #0a0a0a;
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* The typewriter cursor blink effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #ffdd03; }
+}
+
+/* Subtitle styling */
+.subtitle {
+    font-size: 1.5rem;
+    color: #494200;
+    margin-top: 1em;
+}
+
+/* Button container styling */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 6em; /* Space between login and signup columns */
+    margin-top: 1em;
+}
+
+/* Login and Signup button columns */
+.login-buttons,
+.signup-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: center;
+}
+
+/* Button styling */
+.button {
+    padding: 0.8em 1.2em;
+    background-color: #fbc403;
+    color: #0a0a0a;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 200px;
+}
+
+/* Hover effects for buttons */
+.login-teacher:hover, .login-student:hover {
+    background-color: #ffdd03;
+}
+
+.signup-teacher:hover, .signup-student:hover {
+    background-color: #ffdd03;
+}
+
+/* Button focus styling */
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 5px #fbc403;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .typewriter h1.title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .button {
+        font-size: 0.9rem;
+        width: 160px;
+    }
+    
+    .button-container {
+        flex-direction: column; /* Stack columns vertically on smaller screens */
+        gap: 1em;
+    }
+}
+
+
+/* Style for the login box */
+.outer-login-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fbfcd4;
+    font-family: 'Gill Sans', sans-serif;
+}
+
+.login-box {
+    width: 300px;
+    padding: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #494200;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 1.5em;
+    color: #151515;
+}
+
+/* Style for form fields and button */
+.login-box label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #151515;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"],
+.login-box input[type="phone"],
+.login-box input[type="text"] {
+    width: 100%;
+    padding: 0.7em;
+    margin-bottom: 1.2em; /* Increased space between fields */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 0.7em;
+    background-color: #fbc403;
+    color: #0a0a0a;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.login-box button:hover {
+    background-color: #ffdd03;
+}
+
+/*header.php*/
+/* Style for the header container */
+.header-header {
+    background-color: #fbc403;
+    padding: 1em 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the nav inside the header */
+.header-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Left and right link groups */
+.nav-left, .nav-right {
+    display: flex;
+    gap: 2em; /* Spacing between links */
+}
+
+/* Style for the links inside nav */
+.header-header nav a {
+    color: #0a0a0a;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for links */
+.header-header nav a:hover {
+    background-color: #ffdd03;
+    color: #000;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .header-header nav {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .nav-left, .nav-right {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Container for the classroom tiles */
+.dashboard-h1 {
+    padding-left: 0.5em;
+}
+
+.classrooms-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 1em;
+    justify-content: flex-start;
+}
+
+/* Styling for each classroom tile */
+.classroom-tile {
+    width: 200px;
+    background-color: #fbc403;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures the anchor fills the tile fully */
+    transition: transform 0.2s ease;
+}
+
+/* Make the anchor fill the entire tile and inherit the background color */
+.classroom-tile a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    height: 100%;
+    color: #0a0a0a;
+    text-decoration: none;
+    background-color: inherit; /* Matches the background color of the tile */
+}
+
+/* Hover effect */
+.classroom-tile:hover {
+    transform: translateY(-5px);
+    background-color: #ffdd03;
+}
+
+.classroom-tile a:hover {
+    background-color: inherit; /* Prevents color change when hovering the link */
+}
+
+.classroom-tile p>span {
+    background-color: #fbc403;
+}
+
+/*join-create*/
+/* General styling for the join and create classroom container */
+.join-classroom, .create-classroom {
+    background-color: #fbfcd4;
+    border-radius: 8px;
+    padding: 2em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 2em 0;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #494200;
+}
+
+/* Title styling */
+.join-classroom h2, .create-classroom h2 {
+    font-size: 1.8rem;
+    color: #0a0a0a;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Label and input styling */
+.join-classroom label, .create-classroom label {
+    font-size: 1rem;
+    color: #0a0a0a;
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.join-classroom input, .create-classroom input {
+    width: 100%;
+    padding: 0.8em;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1.5em;
+}
+
+.join-classroom input:focus, .create-classroom input:focus {
+    border-color: #fbc403; /* Highlight border on focus */
+    outline: none;
+}
+
+/* Button styling */
+.join-classroom button, .create-classroom button {
+    width: 100%;
+    padding: 1em;
+    background-color: #fbc403;
+    color: #0a0a0a;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.join-classroom button:hover, .create-classroom button:hover {
+    background-color: #ffdd03;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .join-classroom, .create-classroom {
+        padding: 1.5em;
+        margin: 1em;
+    }
+
+    .join-classroom h2, .create-classroom h2 {
+        font-size: 1.5rem;
+    }
+    
+    .join-classroom input, .create-classroom input {
+        font-size: 0.9rem;
+    }
+
+    .join-classroom button, .create-classroom button {
+        font-size: 0.9rem;
+    }
+}
+
+/*classroom_home*/
+/* Container for the classroom title and joining code */
+.classroom-info {
+    background-color: #fbfcd4;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #494200;
+}
+
+/* Styling for the classroom title (h1) */
+.classroom-info h1 {
+    font-size: 2rem;
+    color: #0a0a0a;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+/* Styling for the classroom joining code paragraph */
+.classroom-info p {
+    font-size: 1rem;
+    color: #0a0a0a;
+    margin-top: 1em;
+    text-align: center;
+}
+
+/* Classroom navigation bar */
+.classroom-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 2em;
+}
+
+/* Styling for each classroom navigation link */
+.classroom-nav .btn {
+    display: inline-block;
+    padding: 1em 2em;
+    background-color: #fbc403;
+    color: #0a0a0a;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for navigation links */
+.classroom-nav .btn:hover {
+    background-color: #ffdd03;
+}
+
+/* Classroom content section */
+.classroom-content {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .classroom-info {
+        padding: 1.5em;
+        margin: 1em;
+    }
+
+    .classroom-info h1 {
+        font-size: 1.5rem;
+    }
+
+    .classroom-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    .classroom-nav .btn {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+}
+
+/*stream*/
+/* Styling for the post container */
+.post-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three columns for posts */
+    gap: 1.5em; /* Space between posts */
+    margin: 2em 0;
+}
+
+/* Styling for each individual post */
+.post {
+    background-color: #ffffff;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for posts */
+.post:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Post description styling */
+.post p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Due date styling */
+.post small {
+    display: block;
+    margin-top: 1em;
+    font-size: 0.875rem;
+    color: #777;
+}
+
+/* Styling for the "No posts yet" message */
+.post-container p {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    margin-top: 2em;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .post-container {
+        grid-template-columns: 1fr 1fr; /* Two columns for smaller screens */
+    }
+
+    .post {
+        padding: 1em;
+    }
+
+    .post p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .post-container {
+        grid-template-columns: 1fr; /* One column for very small screens */
+    }
+}
+
+/*post*/
+/* Style for the entire form container */
+.post-new-assignment {
+    background-color: #fbfcd4;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 3px solid #0a0a0a;
+}
+
+.post-new-assignment h3 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style for the labels and inputs */
+.post-new-assignment label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.post-new-assignment textarea,
+.post-new-assignment input[type="date"],
+.post-new-assignment input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.post-new-assignment textarea {
+    height: 150px;
+}
+
+.post-new-assignment input[type="file"] {
+    font-size: 14px;
+}
+
+.post-new-assignment button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.post-new-assignment button:hover {
+    background-color: #45a049;
+}
+
+.post-new-assignment hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    .post-new-assignment {
+        padding: 15px;
+    }
+
+    .post-new-assignment h3 {
+        font-size: 20px;
+    }
+}
+
+
+/* Style for the container holding all assignments */
+.posted-content-holder {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style for individual assignment blocks */
+.posted-single-assignment {
+    background-color: #fbfcd4;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.posted-single-assignment h4 {
+    color: #2e6d31;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.posted-single-assignment p {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.download-link {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.download-link:hover {
+    text-decoration: underline;
+}
+
+/* Style for the delete button (teachers only) */
+.post-delete-button {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.delete-button {
+    background-color: #FF4C4C;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #e04141;
+}
+
+/* Style for the submission form (students only) */
+.submit-assignment {
+    margin-top: 20px;
+    background-color: #fbfcd4;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.submit-assignment h5 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.submit-assignment label {
+    font-size: 16px;
+    color: #333;
+}
+
+.submit-assignment textarea,
+.submit-assignment input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+/* Make sure the layout is mobile responsive */
+@media screen and (max-width: 768px) {
+    .posted-single-assignment {
+        padding: 15px;
+    }
+
+    .posted-single-assignment h4 {
+        font-size: 18px;
+    }
+
+    .submit-assignment h5 {
+        font-size: 16px;
+    }
+}
+
+.assignments-header {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+}
+
+/*people*/
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+/* Styling for headings (h3) */
+h3 {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #4CAF50; /* Green line for separation */
+    display: inline-block; /* Keeps the line under the header */
+}
+
+/* Style for paragraphs */
+p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Space between sections */
+section {
+    margin-bottom: 30px; /* Adds space between each section */
+}
+
+/* Specific style for the classroom creator section */
+.classroom-creator {
+    background-color: #fbfcd4;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+}
+
+/* Style for the teacher section */
+.teachers {
+    background-color: #fbfcd4;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    /* font-weight: 500; */
+}
+
+/* Style for the students section */
+.students {
+    background-color: #fbfcd4;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+}
+
+/* Style for the student count */
+.student-count {
+    font-weight: bold;
+    color: #4CAF50;
+}

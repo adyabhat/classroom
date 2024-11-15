@@ -1,0 +1,19 @@
+why different set of pages till dashboard and same till then?
+    login page- where session variables are set
+    dashboard page- page redirected to after login
+
+
+other/ extra features
+1. alert when a teacher successully posts an assignment, or when a student successfully submits one.
+2. should not be allowed to set a date after the current date- trigger
+
+3. teacher is allowed to remove assignment from classroom
+4. handle multiple file uploads for assignment post
+
+5. 
+6. teacher should not be allowed to join a classroom if hey have created it
+
+
+requirements yet to do?
+1. transaction isolation level
+2. remote database access
