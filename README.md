@@ -15,7 +15,7 @@ This project is a Google Classroom Clone, developed to provide a digital platfor
 1. XAMPP is a prerequisite. Ensure it is installed and set up.
 2. Clone this repository locally.
 3. Set up MySQL database from the code accordingly.
-4. Move all files into a folder named `your-folder-name` inside `C:\xampp\htdocs`.
+4. Move all files and folders inside this repository, into a folder named `your-folder-name` inside `C:\xampp\htdocs`.
 5. Access the portal through `http://localhost/your-folder-name/index.php`.
 
 ## Collaborators
